@@ -9,6 +9,8 @@ public class Stack {
         size++;
     }
     public int pop() {
+        if (size == 0)
+            throw new Underflow();
         --size;
         return -1;
     }
