@@ -2,7 +2,7 @@ package stack;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StackTest {
     @Test
@@ -14,5 +14,6 @@ public class StackTest {
     public void canPush() throws Exception {
         Stack stack = new Stack();
         stack.push(0);
+        assertFalse(stack.isEmpty());
     }
 }
