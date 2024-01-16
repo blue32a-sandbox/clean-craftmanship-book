@@ -20,5 +20,6 @@ public class StackTest {
     public void afterOnePushAndOnePop_isEmpty() throws Exception {
         stack.push(0);
         stack.pop();
+        assertTrue(stack.isEmpty());
     }
 }
