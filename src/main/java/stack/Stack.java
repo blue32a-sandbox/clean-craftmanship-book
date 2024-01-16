@@ -1,18 +1,18 @@
 package stack;
 
 public class Stack {
-    private boolean empty = true;
+    private int size = 0;
     public boolean isEmpty() {
-        return empty;
+        return size == 0;
     }
     public void push(int element) {
-        empty = false;
+        size++;
     }
     public int pop() {
-        empty = true;
+        --size;
         return -1;
     }
     public int getSize() {
-        return 2;
+        return size;
     }
 }

@@ -21,7 +21,7 @@ public class StackTest {
         stack.push(0);
         stack.pop();
         assertTrue(stack.isEmpty());
-        assertEquals(1, stack.getSize());
+        assertEquals(0, stack.getSize());
     }
     @Test
     public void afterTwoPushes_sizeIsTwo() throws Exception {
