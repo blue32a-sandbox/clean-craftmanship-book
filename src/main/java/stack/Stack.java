@@ -2,19 +2,20 @@ package stack;
 
 public class Stack {
     private int size = 0;
-    private int element;
+    private int[] elements = new int[2];
+
     public boolean isEmpty() {
         return size == 0;
     }
     public void push(int element) {
         size++;
-        this.element = element;
+        this.elements = element;
     }
     public int pop() {
         if (size == 0)
             throw new Underflow();
         --size;
-        return element;
+        return elements;
     }
     public int getSize() {
         return size;
