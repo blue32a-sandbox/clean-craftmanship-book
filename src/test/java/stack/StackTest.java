@@ -34,4 +34,9 @@ public class StackTest {
     public void poppingEmptyStack_throwsUnderflow() {
         assertThrows(Stack.Underflow.class, () -> stack.pop());
     }
+    @Test
+    public void afterPushingX_willPopX() throws Exception {
+        stack.push(99);
+        assertEquals(99, stack.pop());
+    }
 }
