@@ -9,6 +9,7 @@ public class Stack {
         empty = false;
     }
     public int pop() {
+        empty = true;
         return -1;
     }
 }
