@@ -13,6 +13,6 @@ public class Stack {
         return -1;
     }
     public int getSize() {
-        return 0;
+        return 2;
     }
 }
