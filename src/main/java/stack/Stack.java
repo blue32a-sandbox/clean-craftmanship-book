@@ -8,14 +8,12 @@ public class Stack {
         return size == 0;
     }
     public void push(int element) {
-        size++;
-        this.elements = element;
+        this.elements[size++] = element;
     }
     public int pop() {
         if (size == 0)
             throw new Underflow();
-        --size;
-        return elements;
+        return elements[--size];
     }
     public int getSize() {
         return size;
