@@ -32,6 +32,6 @@ public class StackTest {
     }
     @Test
     public void poppingEmptyStack_throwsUnderflow() {
-        assertThrows(Stack.Underflow.class, () -> System.out.print(""));
+        assertThrows(Stack.Underflow.class, () -> stack.pop());
     }
 }
