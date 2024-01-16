@@ -12,7 +12,7 @@ public class StackTest {
         assertTrue(stack.isEmpty());
     }
     @Test
-    public void canPush() throws Exception {
+    public void afterOnePush_isNotEmpty() throws Exception {
         stack.push(0);
         assertFalse(stack.isEmpty());
     }
