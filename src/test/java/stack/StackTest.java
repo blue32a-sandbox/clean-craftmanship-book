@@ -10,4 +10,9 @@ public class StackTest {
         Stack stack = new Stack();
         assertTrue(stack.isEmpty());
     }
+    @Test
+    public void canPush() throws Exception {
+        Stack stack = new Stack();
+        stack.push(0);
+    }
 }
