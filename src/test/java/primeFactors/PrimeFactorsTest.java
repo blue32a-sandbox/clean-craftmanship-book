@@ -14,5 +14,6 @@ public class PrimeFactorsTest {
 
         assertThat(primeFactors.factorsOf(1), is(empty()));
         assertThat(primeFactors.factorsOf(2), contains(2));
+        assertThat(primeFactors.factorsOf(3), contains(3));
     }
 }
