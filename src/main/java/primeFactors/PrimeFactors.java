@@ -14,8 +14,6 @@ public class PrimeFactors {
             }
             divisor++;
         }
-        if (n > 1)
-            factors.add(n);
         return factors;
     }
 }
