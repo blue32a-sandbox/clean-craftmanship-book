@@ -54,4 +54,10 @@ public class BowlingTest {
         rollMany(16, 0);
         assertEquals(20, g.score());
     }
+
+    @Test
+    public void perfectGame() throws Exception {
+        rollMany(12, 10);
+        assertEquals(300, g.score());
+    }
 }
