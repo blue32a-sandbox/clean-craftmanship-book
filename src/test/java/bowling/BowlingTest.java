@@ -10,13 +10,4 @@ public class BowlingTest {
     public void setUp() throws Exception {
         g = new Game();
     }
-
-    @Test
-    public void canCreateGame() throws Exception {
-    }
-
-    @Test
-    public void canRoll() throws Exception {
-        g.roll(0);
-    }
 }
