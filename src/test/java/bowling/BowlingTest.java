@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class BowlingTest {
     @Test
-    public void nothing() throws Exception {
+    public void canCreateGame() throws Exception {
+        Game g = new Game();
     }
 }
