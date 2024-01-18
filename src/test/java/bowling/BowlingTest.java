@@ -7,4 +7,10 @@ public class BowlingTest {
     public void canCreateGame() throws Exception {
         Game g = new Game();
     }
+
+    @Test
+    public void canRoll() throws Exception {
+        Game g = new Game();
+        g.roll(0);
+    }
 }
