@@ -1,16 +1,22 @@
 package bowling;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class BowlingTest {
+    private Game g;
+
+    @BeforeEach
+    public void setUp() throws Exception {
+        g = new Game();
+    }
+
     @Test
     public void canCreateGame() throws Exception {
-        Game g = new Game();
     }
 
     @Test
     public void canRoll() throws Exception {
-        Game g = new Game();
         g.roll(0);
     }
 }
