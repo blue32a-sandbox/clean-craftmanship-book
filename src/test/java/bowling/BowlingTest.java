@@ -29,4 +29,12 @@ public class BowlingTest {
         rollMany(20, 1);
         assertEquals(20, g.score());
     }
+
+    @Test
+    public void oneSpare() throws Exception {
+        rollMany(2, 5); // spare
+        g.roll(7);
+        rollMany(17, 0);
+        assertEquals(24, g.score());
+    }
 }
