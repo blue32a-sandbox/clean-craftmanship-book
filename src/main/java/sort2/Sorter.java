@@ -18,8 +18,8 @@ public class Sorter {
                 return asList(first, second);
         }
         else {
-            int first = list.get(0);
-            int middle = list.get(1);
+            int first = list.get(1);
+            int middle = list.get(0);
             int last = list.get(2);
             List<Integer> lessers = new ArrayList<>();
             List<Integer> greaters = new ArrayList<>();
