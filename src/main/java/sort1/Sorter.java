@@ -5,6 +5,6 @@ import java.util.List;
 
 public class Sorter {
     public List<Integer> sort(List<Integer> list) {
-        return new ArrayList<>();
+        return list;
     }
 }
