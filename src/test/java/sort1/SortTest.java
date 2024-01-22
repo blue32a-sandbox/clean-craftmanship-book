@@ -10,5 +10,6 @@ public class SortTest {
     public void sorted() throws Exception {
         Sorter sorter = new Sorter();
         assertEquals(asList(), sorter.sort(asList()));
+        assertEquals(asList(1), sorter.sort(asList(1)));
     }
 }
