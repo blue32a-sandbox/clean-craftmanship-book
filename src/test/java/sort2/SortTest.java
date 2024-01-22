@@ -23,5 +23,8 @@ public class SortTest {
         assertEquals(asList(1, 2, 3, 4), sorter.sort(asList(2, 1, 3, 4)));
         assertEquals(asList(1, 2, 3, 4), sorter.sort(asList(4, 3, 2, 1)));
         assertEquals(asList(1, 1, 2, 3), sorter.sort(asList(1, 3, 1, 2)));
+        assertEquals(
+                asList(1, 1, 2, 3, 3, 3, 4, 5, 5, 5, 6, 7, 8, 9, 9, 9),
+                sorter.sort(asList(3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9, 3)));
     }
 }
