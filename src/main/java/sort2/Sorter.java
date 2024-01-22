@@ -20,12 +20,13 @@ public class Sorter {
         }
         else {
             int middle = list.get(0);
+            List<Integer> middles = list.stream().filter(x -> x == middle).collect(toList());
             List<Integer> lessers = list.stream().filter(x -> x < middle).collect(toList());
             List<Integer> greaters = list.stream().filter(x -> x > middle).collect(toList());
 
             List<Integer> result = new ArrayList<>();
             result.addAll(sort(lessers));
-            result.add(middle);
+            result.addAll(middles);
             result.addAll(sort(greaters));
             return result;
         }
