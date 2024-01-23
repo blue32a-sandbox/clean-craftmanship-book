@@ -5,6 +5,6 @@ public class Wrapper {
         if (w >= s.length())
             return s;
         else
-            return s.substring(0, w) + "\n" + wrap(s.substring(w).trim(), w);
+            return s.substring(0, w).trim() + "\n" + wrap(s.substring(w).trim(), w);
     }
 }
