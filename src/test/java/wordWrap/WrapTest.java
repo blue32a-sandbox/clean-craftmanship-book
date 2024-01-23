@@ -14,5 +14,6 @@ public class WrapTest {
     @Test
     public void testWrap() throws Exception {
         assertWrapped("", 1, "");
+        assertWrapped("x", 1, "x");
     }
 }
