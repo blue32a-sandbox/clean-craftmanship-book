@@ -9,5 +9,6 @@ public class WrapTest {
     public void testWrap() throws Exception {
         Wrapper wrapper = new Wrapper();
         assertEquals("Four", wrapper.wrap("Four", 7));
+        assertEquals("Four\nscore", wrapper.wrap("Four score", 7));
     }
 }
