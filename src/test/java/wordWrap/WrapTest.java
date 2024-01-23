@@ -41,5 +41,8 @@ public class WrapTest {
         assertWrapped("xx xx xx", 6, "xx xx\nxx");
         assertWrapped("xx xx xx", 7, "xx xx\nxx");
         assertWrapped("xx xx xx", 8, "xx xx xx");
+        assertWrapped("Four score and seven years ago our fathers brought forth upon this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal",
+                15,
+                "Four score and\nseven years ago\nour fathers\nbrought forth\nupon this\ncontinent a new\nnation\nconceived in\nliberty and\ndedicated to\nthe proposition\nthat all men\nare created\nequal");
     }
 }
