@@ -18,5 +18,7 @@ public class WrapTest {
         assertWrapped("xx", 1, "x\nx");
         assertWrapped("xx", 2, "xx");
         assertWrapped("xxx", 1, "x\nx\nx");
+        assertWrapped("xxx", 2, "xx\nx");
+        assertWrapped("xxx", 3, "xxx");
     }
 }
