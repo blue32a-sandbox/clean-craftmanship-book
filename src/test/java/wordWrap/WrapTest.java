@@ -15,5 +15,6 @@ public class WrapTest {
     public void testWrap() throws Exception {
         assertWrapped("", 1, "");
         assertWrapped("x", 1, "x");
+        assertWrapped("xx", 1, "x\nx");
     }
 }
