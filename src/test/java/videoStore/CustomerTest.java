@@ -51,4 +51,10 @@ public class CustomerTest {
         customer.addRental("ChildrensMovie", 1);
         assertFeeAndPoints(100, 1);
     }
+
+    @Test
+    public void ChildrensMovie_FourDays() throws Exception {
+        customer.addRental("ChildrensMovie", 4);
+        assertFeeAndPoints(400, 1);
+    }
 }
