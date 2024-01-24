@@ -16,22 +16,34 @@ public class Customer {
     public int getRentalFee() {
         int fee = 0;
         for (Rental rental : rentals) {
-            if (getType(rental.title) == REGULAR)
-                fee += applyGracePeriod(150, rental.days, 3);
-            else
-                fee += rental.days * 100;
+            fee += feeFor(rental);
         }
+        return fee;
+    }
+
+    private int feeFor(Rental rental) {
+        int fee = 0;
+        if (getType(rental.title) == REGULAR)
+            fee += applyGracePeriod(150, rental.days, 3);
+        else
+            fee += rental.days * 100;
         return fee;
     }
 
     public int getRenterPoints() {
         int points = 0;
         for (Rental rental : rentals) {
-            if (getType(rental.title) == REGULAR)
-                points += applyGracePeriod(1, rental.days, 3);
-            else
-                points++;
+            points += pointsFor(rental);
         }
+        return points;
+    }
+
+    private int pointsFor(Rental rental) {
+        int points = 0;
+        if (getType(rental.title) == REGULAR)
+            points += applyGracePeriod(1, rental.days, 3);
+        else
+            points++;
         return points;
     }
 
