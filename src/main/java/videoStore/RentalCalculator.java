@@ -3,7 +3,7 @@ package videoStore;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Customer {
+public class RentalCalculator {
     private List<Rental> rentals = new ArrayList<>();
 
     public void addRental(String title , int days) {
