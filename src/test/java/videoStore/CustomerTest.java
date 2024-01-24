@@ -33,9 +33,13 @@ public class CustomerTest {
     }
 
     @Test
-    public void RegularMovie_SecondAndThirdDayFree() throws Exception {
+    public void RegularMovie_SecondDayFree() throws Exception {
         customer.addRental("RegularMovie", 2);
         assertFeeAndPoints(150, 1);
+    }
+
+    @Test
+    public void RegularMovie_ThirdDayFree() throws Exception {
         customer.addRental("RegularMovie", 3);
         assertFeeAndPoints(150, 1);
     }
