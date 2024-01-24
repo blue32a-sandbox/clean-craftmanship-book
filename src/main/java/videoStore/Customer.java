@@ -16,52 +16,64 @@ public class Customer {
     public int getRentalFee() {
         int fee = 0;
         for (Rental rental : rentals) {
-            fee += feeFor(rental);
+            fee += rental.getFee();
         }
-        return fee;
-    }
-
-    private int feeFor(Rental rental) {
-        int fee = 0;
-        if (getType(rental.title) == REGULAR)
-            fee += applyGracePeriod(150, rental.days, 3);
-        else
-            fee += rental.days * 100;
         return fee;
     }
 
     public int getRenterPoints() {
         int points = 0;
         for (Rental rental : rentals) {
-            points += pointsFor(rental);
+            points += rental.getPoints();
         }
         return points;
     }
 
-    private int pointsFor(Rental rental) {
-        int points = 0;
-        if (getType(rental.title) == REGULAR)
-            points += applyGracePeriod(1, rental.days, 3);
-        else
-            points++;
-        return points;
-    }
-
-    private int applyGracePeriod(int amount, int days, int grace) {
-        if (days > grace)
-            return amount + amount * (days - grace);
-        return amount;
-    }
-
     public class Rental {
-        public String title;
-        public int days;
-        public VideoType type;
+        private String title;
+        private int days;
+        private VideoType type;
 
         public Rental(String title, int days) {
             this.title = title;
             this.days = days;
             type = VideoRegistry.getType(title);
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public int getDays() {
+            return days;
+        }
+
+        public VideoType getType() {
+            return type;
+        }
+
+        public int getFee() {
+            int fee = 0;
+            if (getType() == REGULAR)
+                fee += applyGracePeriod(150, getDays(), 3);
+            else
+                fee += getDays() * 100;
+            return fee;
+        }
+
+        public int getPoints() {
+            int points = 0;
+            if (getType() == REGULAR)
+                points += applyGracePeriod(1, getDays(), 3);
+            else
+                points++;
+            return points;
+        }
+
+        private static int applyGracePeriod(int amount, int days, int grace) {
+            if (days > grace)
+                return amount + amount * (days - grace);
+            return amount;
         }
     }
 }
