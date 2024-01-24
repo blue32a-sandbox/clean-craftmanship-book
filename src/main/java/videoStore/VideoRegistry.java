@@ -8,8 +8,14 @@ public class VideoRegistry {
 
     private static Map<String, VideoType> videoRegistry = new HashMap<>();
 
-    public static VideoType getType(String title) {
-        return videoRegistry.get(title);
+    public static Movie getMovie(String title) {
+        switch (videoRegistry.get(title)) {
+            case REGULAR:
+                return new RegularMovie(title);
+            case CHILDRENS:
+                return new ChildrensMovie(title);
+        }
+        return null;
     }
 
     public static void addMovie(String title, VideoType type) {
