@@ -15,11 +15,14 @@ public class Customer {
         if (VideoRegistry.getType(title) == REGULAR)
             return applyGracePeriod(150, 3);
         else
-            return 100;
+            return 100 * days;
     }
 
     public int getRenterPoints() {
-        return applyGracePeriod(1, 3);
+        if (VideoRegistry.getType(title) == REGULAR)
+            return applyGracePeriod(1, 3);
+        else
+            return 1;
     }
 
     private int applyGracePeriod(int amount, int grace) {
