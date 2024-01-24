@@ -1,12 +1,20 @@
 package videoStore;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static videoStore.VideoRegistry.VideoType.*;
 
 public class CustomerTest {
     private Customer customer;
+
+    @BeforeAll
+    public static void loadRegistry() {
+        VideoRegistry.addMovie("RegularMovie", REGULAR);
+        VideoRegistry.addMovie("ChildrensMovie", CHILDRENS);
+    }
 
     @BeforeEach
     public void setUp() throws Exception {
