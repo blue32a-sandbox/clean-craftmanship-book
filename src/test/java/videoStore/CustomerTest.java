@@ -31,4 +31,10 @@ public class CustomerTest {
         customer.addRental("RegularMovie", 3);
         assertFeeAndPoints(1.5, 1);
     }
+
+    @Test
+    public void RegularMovie_FourDays() throws Exception {
+        customer.addRental("RegularMovie", 4);
+        assertFeeAndPoints(3.0, 2);
+    }
 }
