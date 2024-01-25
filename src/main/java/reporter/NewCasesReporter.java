@@ -3,10 +3,14 @@ package reporter;
 import java.util.*;
 
 public class NewCasesReporter {
+    int totalCases;
+    Map<String, Integer> stateCounts = new HashMap<>();
+    List<County> counties = new ArrayList<>();
+
     public String makeReport(String countyCsv) {
-        int totalCases = 0;
-        Map<String, Integer> stateCounts = new HashMap<>();
-        List<County> counties = new ArrayList<>();
+        totalCases = 0;
+        stateCounts.clear();
+        counties.clear();
 
         String[] lines = countyCsv.split("\n");
         for (String line : lines) {
