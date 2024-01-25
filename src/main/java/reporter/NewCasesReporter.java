@@ -8,11 +8,31 @@ public class NewCasesReporter {
     List<County> counties = new ArrayList<>();
 
     public String makeReport(String countyCsv) {
+        String[] countyLines = countyCsv.split("\n");
+        calculateCounties(countyLines);
+
+        StringBuilder report = new StringBuilder("" +
+                "County State Avg New Cases\n" +
+                "====== ===== =============\n");
+        for (County county : counties) {
+            report.append(String.format("%-11s%-10s%.2f\n",
+                    county.county,
+                    county.state,
+                    county.rollingAverage));
+        }
+        report.append("\n");
+        TreeSet<String> states = new TreeSet<>(stateCounts.keySet());
+        for (String state : states)
+            report.append(String.format("%s cases: %d\n",
+                    state, stateCounts.get(state)));
+        report.append(String.format("Total Cases: %d\n", totalCases));
+        return report.toString();
+    }
+
+    private void calculateCounties(String[] lines) {
         totalCases = 0;
         stateCounts.clear();
         counties.clear();
-
-        String[] lines = countyCsv.split("\n");
         for (String line : lines) {
             String[] tokens = line.split(",");
             County county = new County();
@@ -38,23 +58,8 @@ public class NewCasesReporter {
             stateCounts.put(county.state, stateCount + cases);
             counties.add(county);
         }
-        StringBuilder report = new StringBuilder("" +
-                "County State Avg New Cases\n" +
-                "====== ===== =============\n");
-        for (County county : counties) {
-            report.append(String.format("%-11s%-10s%.2f\n",
-                    county.county,
-                    county.state,
-                    county.rollingAverage));
-        }
-        report.append("\n");
-        TreeSet<String> states = new TreeSet<>(stateCounts.keySet());
-        for (String state : states)
-            report.append(String.format("%s cases: %d\n",
-                    state, stateCounts.get(state)));
-        report.append(String.format("Total Cases: %d\n", totalCases));
-        return report.toString();
     }
+
     public static class County {
         public String county = null;
         public String state = null;
